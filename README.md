@@ -6,8 +6,10 @@ This repo can be used to plot single as well as multiple values in OpenCV python
 Plot single integer values in realtime using this file.     
 
 ### Usage:        
-### Create a plotter class object     
+### Create a plotter class object  
+```
 p = Plotter(400, 200) #(plot_width, plot_height)   
+```   
 
 ### Create dummy values using for loop     
 ```
@@ -21,7 +23,9 @@ Plot multiple values in reallime  using this file.
 
 ### Usage:    
 ### Create a plotter class object    
-p = Plotter(400, 200, 3) #(plot_width, plot_height)       
+```
+p = Plotter(400, 200, 3) #(plot_width, plot_height)    
+```
 
 ### Create dummy values using for loop    
 ```
