@@ -39,9 +39,10 @@ class Plotter:
         scale_h_max = max(self.plots[label])
         scale_h_min = min(self.plots[label]) 
         scale_h_min = -scale_h_min if scale_h_min<0 else scale_h_min
+        #print(scale_h_max)
         scale_h = scale_h_max if scale_h_max > scale_h_min else scale_h_min
         scale_h = scale_h if scale_h < self.sample_buffer else self.sample_buffer
-        scale_h = ((self.height-self.margin_d-self.margin_u)/2)/scale_h
+        scale_h = ((self.height-self.margin_d-self.margin_u)/2)/scale_h if not scale_h == 0 else 0
         
 
         for j,i in enumerate(np.linspace(0,self.sample_buffer-2,self.width-self.margin_l-self.margin_r)):
@@ -60,11 +61,11 @@ class Plotter:
 
 def single_sample():
     # Create dummy values using for loop 
-    p = Plotter(400, 200,sample_buffer=None)
+    p = Plotter(400, 200,sample_buffer=1000)
 
     for v in range(1,3000):
         
-        p.plot(int(math.sin(v*3.14/180)*100),label='sin')
+        p.plot(int(math.sin(v*3.14/180)*440),label='sin')
         
         p.plot(int(math.cos(v*3.14/180)*50),label='cos')
         #print(len(p.plots['sin']))
