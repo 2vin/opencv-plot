@@ -62,7 +62,7 @@ class Plotter:
 def single_sample():
     # Create dummy values using for loop 
     p = Plotter(400, 200,sample_buffer=200)
-
+    
     for v in range(1,3000):
         
         p.plot(int(math.sin(v*3.14/180)*100),label='sin')

@@ -41,3 +41,24 @@ for v in range(500):
 
 
 
+## cvPLOT.py (use different label for each plot)   
+Plot multiple values in reallime in multiwindows with a simple 
+
+### Usage:    
+### Create a plotter class object    
+```
+p = Plotter(400, 200, 100) #(plot_width, plot_height, sample_count)    
+```
+
+### Create dummy values using for loop    
+```
+p = Plotter(400, 200,sample_buffer=200)
+    
+    for v in range(1,3000):
+        
+        p.plot(int(math.sin(v*3.14/180)*100),label='sin') ## Add label 'sin' to show in a seperate window
+        
+        p.plot(int(math.cos(v*3.14/180)*50),label='cos')     
+```   
+![Results](https://github.com/Parrytoss/opencv-plot/blob/featurefull/cvPLOT_sin.gif)`       
+
